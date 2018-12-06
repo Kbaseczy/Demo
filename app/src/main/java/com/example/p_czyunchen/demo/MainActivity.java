@@ -15,5 +15,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.viewflipper).setOnClickListener(v->
                 startActivity(new Intent(MainActivity.this,ViewFlipperActivity.class)));
 
+        //recyclerView -> getViewType
+
     }
 }

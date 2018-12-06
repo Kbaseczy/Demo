@@ -16,7 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ViewFlipperActivity"></activity>
+        <activity android:name=".ViewFlipperActivity" />
+        <activity android:name=".GetViewTypeActivity"></activity>
     </application>
 
 </manifest>
