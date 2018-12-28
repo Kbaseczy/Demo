@@ -1,7 +1,10 @@
 <resources>
     <string name="app_name">Demo</string>
-    <string name="viewflipper">ViewFlipper</string>
+    <string name="view_flipper">viewFlipper</string>
     <string name="getViewType">getViewType</string>
     <string name="hot_news">热议</string>
     <string name="hot_content">小米6来了：晓龙835+8G运存！</string>
+    <string name="TODO">TODO</string>
+    <string name="galary">Galary</string>
+    <string name="todo">TODO</string>
 </resources>

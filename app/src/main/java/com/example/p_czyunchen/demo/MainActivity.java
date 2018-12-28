@@ -1,5 +1,6 @@
 package com.example.p_czyunchen.demo;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -18,5 +19,12 @@ public class MainActivity extends AppCompatActivity {
         //recyclerView -> getViewType
         findViewById(R.id.getViewType).setOnClickListener(v->
                 startActivity(new Intent(MainActivity.this,GetViewTypeActivity.class)));
+
+        //TODO
+        findViewById(R.id.TODO).setOnClickListener(v->
+                startActivity(new Intent(MainActivity.this,TODOActivity.class)));
+
+        findViewById(R.id.Galary).setOnClickListener(v->
+                startActivity(new Intent(MainActivity.this,GalaryActivity.class)));
     }
 }
