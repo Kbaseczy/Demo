@@ -7,9 +7,7 @@ import android.support.annotation.RequiresApi;
 import android.support.v7.widget.LinearLayoutManager;
 import android.widget.ImageView;
 
-import com.bumptech.glide.GenericTransitionOptions;
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.TransitionOptions;
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
 import com.example.p_czyunchen.demo.adapter.GalaryAdapter;
 import com.example.p_czyunchen.demo.custom.MyRecyclerView;
