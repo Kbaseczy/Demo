@@ -10,7 +10,9 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.example.p_czyunchen.demo.R;
+import com.example.p_czyunchen.demo.bean.Beauty;
 
 import java.util.List;
 
@@ -18,6 +20,11 @@ public class GalaryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
     private Context mContext;
     private List<Integer> list;
     private OnItemClick itemClick;
+    private List<Beauty.ResultsBean> resultsBeans;
+    public void setResultsBeans(List<Beauty.ResultsBean> resultsBeans) {
+        this.resultsBeans = resultsBeans;
+    }
+
 
     public void setItemClick(OnItemClick itemClick) {
         this.itemClick = itemClick;
@@ -27,7 +34,6 @@ public class GalaryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
         this.mContext = context;
         this.list = list;
     }
-
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
@@ -40,7 +46,8 @@ public class GalaryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, int i) {
         if (viewHolder instanceof ViewHolder) {
-            ((ViewHolder) viewHolder).imageView.setImageResource(list.get(i));
+//            ((ViewHolder) viewHolder).imageView.setImageResource(list.get(i));
+            Glide.with(mContext).load(resultsBeans.get(i).getUrl()).into(((ViewHolder) viewHolder).imageView);
             ((ViewHolder) viewHolder).linearLayout.setOnClickListener(v ->
                     itemClick.onClick(viewHolder, i)
             );
@@ -49,7 +56,7 @@ public class GalaryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
 
     @Override
     public int getItemCount() {
-        return list.size();
+        return resultsBeans.size();
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {

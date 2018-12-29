@@ -28,7 +28,7 @@ public class MyRecyclerView extends RecyclerView {
     @Override
     protected void onLayout(boolean changed, int l, int t, int r, int b) {
         super.onLayout(changed, l, t, r, b);
-        currentView = getChildAt(0);
+        currentView = getChildAt(0); //getChildAt获取指定索引位置的view
         if (OnItemScrollChangeListener != null) {
             OnItemScrollChangeListener.change(currentView, getChildAdapterPosition(currentView));
         }
