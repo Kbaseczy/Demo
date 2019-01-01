@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -17,8 +16,40 @@
         android:layout_height="30dp"
         android:layout_gravity="center"
         android:gravity="center"
-        android:text="@string/viewflipper"
+        android:text="@string/view_flipper"
         android:textSize="15sp" />
 
+    <TextView
+        android:id="@+id/getViewType"
+        android:layout_marginTop="30dp"
+        android:background="@color/colorPrimary"
+        android:layout_width="200dp"
+        android:layout_height="30dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="@string/getViewType"
+        android:textSize="15sp" />
 
+    <TextView
+        android:id="@+id/TODO"
+        android:layout_marginTop="30dp"
+        android:background="@color/colorPrimary"
+        android:layout_width="200dp"
+        android:layout_height="30dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="@string/TODO"
+        android:textSize="15sp"/>
+
+
+    <TextView
+        android:id="@+id/Galary"
+        android:layout_marginTop="30dp"
+        android:background="@color/colorPrimary"
+        android:layout_width="200dp"
+        android:layout_height="30dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="@string/galary"
+        android:textSize="15sp"/>
 </LinearLayout>

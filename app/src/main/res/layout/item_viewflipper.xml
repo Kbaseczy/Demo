@@ -31,4 +31,8 @@
             android:textSize="14sp"
             android:layout_marginStart="15dp" />
     </LinearLayout>
+    <TextView
+        android:id="@+id/item_recycler"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 </LinearLayout>

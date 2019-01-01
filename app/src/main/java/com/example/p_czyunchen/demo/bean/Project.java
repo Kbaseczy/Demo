@@ -1,5 +1,6 @@
 package com.example.p_czyunchen.demo.bean;
 
+<<<<<<< HEAD
 import java.util.List;
 
 public class Project {
@@ -360,4 +361,7 @@ public class Project {
             }
         }
     }
+=======
+public class Project {
+>>>>>>> b1f63274f85950acbc2e1098c29a7e7be02e8dae
 }

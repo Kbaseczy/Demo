@@ -3,6 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.p_czyunchen.demo">
 
+<<<<<<< HEAD
+=======
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+>>>>>>> b1f63274f85950acbc2e1098c29a7e7be02e8dae
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -21,8 +25,15 @@
             </intent-filter>
         </activity>
         <activity android:name=".ViewFlipperActivity" />
+<<<<<<< HEAD
         <activity android:name=".ProjectActivity" />
         <activity android:name=".NavigationActivity"/>
+=======
+        <activity android:name=".GetViewTypeActivity" />
+        <activity android:name=".TODOActivity" />
+        <activity android:name=".JsonActivity" />
+        <activity android:name=".GalaryActivity"/>
+>>>>>>> b1f63274f85950acbc2e1098c29a7e7be02e8dae
     </application>
 
 </manifest>
