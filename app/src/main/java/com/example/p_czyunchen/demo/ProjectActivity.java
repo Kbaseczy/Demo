@@ -10,4 +10,8 @@ public class ProjectActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_project);
     }
+
+    void test(){
+
+    }
 }
