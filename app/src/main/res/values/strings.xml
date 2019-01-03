@@ -1,5 +1,10 @@
 <resources>
     <string name="app_name">Demo</string>
+<<<<<<< HEAD
+    <string name="viewflipper">ViewFlipper</string>
+    <string name="hot_news">tech</string>
+    <string name="hot_content">content</string>
+=======
     <string name="view_flipper">viewFlipper</string>
     <string name="getViewType">getViewType</string>
     <string name="hot_news">热议</string>
@@ -7,7 +12,11 @@
     <string name="TODO">TODO</string>
     <string name="galary">Galary</string>
     <string name="todo">TODO</string>
+<<<<<<< HEAD
     <string name="add">add</string>
     <string name="remove">remove</string>
     <string name="remove_add">remove_add</string>
+=======
+>>>>>>> b1f63274f85950acbc2e1098c29a7e7be02e8dae
+>>>>>>> 36cdecd96c335b2baee61da01e863017a37e1521
 </resources>
