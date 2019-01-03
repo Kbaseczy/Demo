@@ -25,7 +25,6 @@ public class GalaryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
         this.resultsBeans = resultsBeans;
     }
 
-
     public void setItemClick(OnItemClick itemClick) {
         this.itemClick = itemClick;
     }

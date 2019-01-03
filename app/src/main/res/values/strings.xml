@@ -7,4 +7,7 @@
     <string name="TODO">TODO</string>
     <string name="galary">Galary</string>
     <string name="todo">TODO</string>
+    <string name="add">add</string>
+    <string name="remove">remove</string>
+    <string name="remove_add">remove_add</string>
 </resources>

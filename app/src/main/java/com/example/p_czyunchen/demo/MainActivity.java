@@ -1,9 +1,8 @@
 package com.example.p_czyunchen.demo;
 
-import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -13,18 +12,21 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //viewFlipper
-        findViewById(R.id.viewflipper).setOnClickListener(v->
-                startActivity(new Intent(MainActivity.this,ViewFlipperActivity.class)));
+        findViewById(R.id.viewflipper).setOnClickListener(v ->
+                startActivity(new Intent(MainActivity.this, ViewFlipperActivity.class)));
 
         //recyclerView -> getViewType
-        findViewById(R.id.getViewType).setOnClickListener(v->
-                startActivity(new Intent(MainActivity.this,GetViewTypeActivity.class)));
+        findViewById(R.id.getViewType).setOnClickListener(v ->
+                startActivity(new Intent(MainActivity.this, GetViewTypeActivity.class)));
 
         //TODO
-        findViewById(R.id.TODO).setOnClickListener(v->
-                startActivity(new Intent(MainActivity.this,TODOActivity.class)));
+        findViewById(R.id.TODO).setOnClickListener(v ->
+                startActivity(new Intent(MainActivity.this, TODOActivity.class)));
 
-        findViewById(R.id.Galary).setOnClickListener(v->
-                startActivity(new Intent(MainActivity.this,GalaryActivity.class)));
+        findViewById(R.id.Galary).setOnClickListener(v ->
+                startActivity(new Intent(MainActivity.this, GalaryActivity.class)));
+
+        findViewById(R.id.remove_add).setOnClickListener(v ->
+                startActivity(new Intent(this, RemoveAddActivity.class)));
     }
 }

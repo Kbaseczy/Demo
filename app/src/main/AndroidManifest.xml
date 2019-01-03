@@ -25,7 +25,10 @@
         <activity android:name=".GetViewTypeActivity" />
         <activity android:name=".TODOActivity" />
         <activity android:name=".JsonActivity" />
-        <activity android:name=".GalaryActivity"/>
+        <activity android:name=".GalaryActivity" />
+        <activity
+            android:name=".RemoveAddActivity"
+            android:theme="@style/AppBaseTheme" />
     </application>
 
 </manifest>
