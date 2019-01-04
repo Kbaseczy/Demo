@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">Demo</string>
-    <string name="viewflipper">ViewFlipper</string>
     <string name="view_flipper">viewFlipper</string>
     <string name="getViewType">getViewType</string>
     <string name="hot_news">热议</string>
