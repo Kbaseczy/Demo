@@ -25,12 +25,8 @@
         </activity>
         <activity android:name=".ViewFlipperActivity" />
 
-        <activity android:name=".ProjectActivity" />
-        <activity android:name=".NavigationActivity"/>
-
         <activity android:name=".GetViewTypeActivity" />
         <activity android:name=".TODOActivity" />
-        <activity android:name=".JsonActivity" />
         <activity android:name=".GalaryActivity" />
         <activity
             android:name=".RemoveAddActivity"

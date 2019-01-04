@@ -5,7 +5,10 @@ import android.app.Activity;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
+import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -28,6 +31,7 @@ import okhttp3.Request;
 public class GalaryActivity extends Activity {
 
     List<Integer> list;
+    private GalaryAdapter adapter;
     private List<Beauty.ResultsBean> resultsBeans;
 
     @RequiresApi(api = Build.VERSION_CODES.M)
@@ -46,7 +50,7 @@ public class GalaryActivity extends Activity {
         imageView.setOnClickListener(v -> fullScreen());
         LinearLayoutManager manager = new LinearLayoutManager(this);
         manager.setOrientation(LinearLayoutManager.HORIZONTAL);
-        GalaryAdapter adapter = new GalaryAdapter(this, list);
+        adapter = new GalaryAdapter(this, list);
         adapter.setResultsBeans(resultsBeans);
         adapter.setItemClick((view, i) ->
                 Glide.with(this)
@@ -60,6 +64,8 @@ public class GalaryActivity extends Activity {
                         .load(resultsBeans.get(i).getUrl())
                         .transition(new DrawableTransitionOptions().transition(R.anim.go_in))
                         .into(imageView));
+
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
     }
 
     @TargetApi(Build.VERSION_CODES.KITKAT)
@@ -94,7 +100,7 @@ public class GalaryActivity extends Activity {
 
         OkHttpUtils
                 .post()
-                .url("http://gank.io/api/data/"+"福利"+"/"+20+"/"+1)
+                .url("http://gank.io/api/data/" + "福利" + "/" + 20 + "/" + 1)
                 .build()
                 .execute(new StringCallback() {
                     @Override
@@ -117,5 +123,23 @@ public class GalaryActivity extends Activity {
                 });
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_addremove, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_add:
+                adapter.add(1);
+                break;
+            case R.id.action_remove:
+                adapter.remove(1);
+                break;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
 }

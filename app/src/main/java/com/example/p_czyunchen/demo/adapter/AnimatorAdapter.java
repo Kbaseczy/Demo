@@ -2,6 +2,7 @@ package com.example.p_czyunchen.demo.adapter;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -33,7 +34,11 @@ public class AnimatorAdapter extends RecyclerView.Adapter<AnimatorAdapter.ViewHo
 
     @Override
     public void onBindViewHolder(@NonNull AnimatorAdapter.ViewHolder viewHolder, int i) {
-
+        viewHolder.cardView.setOnLongClickListener(v -> {
+                    remove(i);
+                    return true;
+                }
+        );
     }
 
     @Override
@@ -42,9 +47,12 @@ public class AnimatorAdapter extends RecyclerView.Adapter<AnimatorAdapter.ViewHo
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {
+        CardView cardView;
 
         ViewHolder(@NonNull View itemView) {
             super(itemView);
+            cardView = itemView.findViewById(R.id.cardView_animator);
+
         }
     }
 

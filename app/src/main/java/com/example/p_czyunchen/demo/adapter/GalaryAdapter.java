@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.p_czyunchen.demo.R;
@@ -21,6 +22,13 @@ public class GalaryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
     private List<Integer> list;
     private OnItemClick itemClick;
     private List<Beauty.ResultsBean> resultsBeans;
+
+    public void setmDatas(List<String> mDatas) {
+        this.mDatas = mDatas;
+    }
+
+    private List<String> mDatas;
+
     public void setResultsBeans(List<Beauty.ResultsBean> resultsBeans) {
         this.resultsBeans = resultsBeans;
     }
@@ -33,6 +41,7 @@ public class GalaryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
         this.mContext = context;
         this.list = list;
     }
+
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
@@ -49,6 +58,12 @@ public class GalaryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
             Glide.with(mContext).load(resultsBeans.get(i).getUrl()).into(((ViewHolder) viewHolder).imageView);
             ((ViewHolder) viewHolder).linearLayout.setOnClickListener(v ->
                     itemClick.onClick(viewHolder, i)
+            );
+            ((ViewHolder) viewHolder).linearLayout.setOnLongClickListener(v -> {
+                        Toast.makeText(mContext, "long click", Toast.LENGTH_SHORT).show();
+                        remove(i);
+                        return true;
+                    }
             );
         }
     }
@@ -73,5 +88,15 @@ public class GalaryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
 
     public interface OnItemClick {
         void onClick(RecyclerView.ViewHolder view, int position);
+    }
+
+    public void add(int position) {
+        mDatas.add(position, "insert");
+        notifyItemInserted(position);
+    }
+
+    public void remove(int position) {
+        mDatas.remove(position);
+        notifyItemRemoved(position);
     }
 }

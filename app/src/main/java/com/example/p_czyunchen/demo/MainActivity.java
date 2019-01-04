@@ -28,5 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
         findViewById(R.id.remove_add).setOnClickListener(v ->
                 startActivity(new Intent(this, RemoveAddActivity.class)));
+
+
     }
 }
