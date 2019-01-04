@@ -6,7 +6,7 @@
     android:orientation="vertical"
     tools:context=".GalaryActivity">
 
-    <!--<include layout="@layout/appbar"/>-->
+    <include layout="@layout/appbar"/>
 
     <FrameLayout
         android:layout_width="match_parent"

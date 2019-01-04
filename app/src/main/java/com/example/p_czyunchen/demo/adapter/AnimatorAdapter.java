@@ -12,7 +12,6 @@ import com.example.p_czyunchen.demo.R;
 
 import java.util.List;
 
-
 public class AnimatorAdapter extends RecyclerView.Adapter<AnimatorAdapter.ViewHolder> {
     public void setmDatas(List<String> mDatas) {
         this.mDatas = mDatas;

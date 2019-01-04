@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.p_czyunchen.demo">
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -24,7 +23,8 @@
 
         <activity android:name=".GetViewTypeActivity" />
         <activity android:name=".TODOActivity" />
-        <activity android:name=".GalaryActivity" />
+        <activity android:name=".GalaryActivity"
+            android:theme="@style/AppBaseTheme"/>
         <activity
             android:name=".RemoveAddActivity"
             android:theme="@style/AppBaseTheme" />

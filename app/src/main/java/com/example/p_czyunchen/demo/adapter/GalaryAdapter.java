@@ -61,7 +61,7 @@ public class GalaryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
             );
             ((ViewHolder) viewHolder).linearLayout.setOnLongClickListener(v -> {
                         Toast.makeText(mContext, "long click", Toast.LENGTH_SHORT).show();
-                        remove(i);
+                        remove(resultsBeans.size()-1);
                         return true;
                     }
             );
@@ -91,12 +91,12 @@ public class GalaryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
     }
 
     public void add(int position) {
-        mDatas.add(position, "insert");
+        resultsBeans.add(position, new Beauty.ResultsBean());
         notifyItemInserted(position);
     }
 
     public void remove(int position) {
-        mDatas.remove(position);
+        resultsBeans.remove(position);
         notifyItemRemoved(position);
     }
 }

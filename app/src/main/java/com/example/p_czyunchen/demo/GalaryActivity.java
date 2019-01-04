@@ -1,10 +1,12 @@
 package com.example.p_czyunchen.demo;
 
 import android.annotation.TargetApi;
-import android.app.Activity;
 import android.os.Build;
 import android.os.Bundle;
 import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import android.view.Menu;
@@ -28,7 +30,7 @@ import java.util.List;
 import okhttp3.Call;
 import okhttp3.Request;
 
-public class GalaryActivity extends Activity {
+public class GalaryActivity extends AppCompatActivity {
 
     List<Integer> list;
     private GalaryAdapter adapter;
@@ -45,6 +47,12 @@ public class GalaryActivity extends Activity {
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     private void initView() {
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(true);
+        }
         MyRecyclerView recyclerView = findViewById(R.id.my_recycler);
         ImageView imageView = findViewById(R.id.image_galary);
         imageView.setOnClickListener(v -> fullScreen());
@@ -136,7 +144,8 @@ public class GalaryActivity extends Activity {
                 adapter.add(1);
                 break;
             case R.id.action_remove:
-                adapter.remove(1);
+                adapter.remove(resultsBeans.size()-1);  //改为这样，开始几次删除正常，多次之后崩溃
+                //todo java.lang.ArrayIndexOutOfBoundsException: length=22; index=-1
                 break;
         }
 
