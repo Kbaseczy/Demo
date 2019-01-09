@@ -61,7 +61,7 @@ public class GalaryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
             );
             ((ViewHolder) viewHolder).linearLayout.setOnLongClickListener(v -> {
                         Toast.makeText(mContext, "long click", Toast.LENGTH_SHORT).show();
-                        remove(resultsBeans.size()-1);
+                        remove(i);
                         return true;
                     }
             );

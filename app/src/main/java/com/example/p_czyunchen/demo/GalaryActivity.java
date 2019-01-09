@@ -141,11 +141,14 @@ public class GalaryActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_add:
-                adapter.add(1);
+                adapter.add(0);
                 break;
             case R.id.action_remove:
-                adapter.remove(resultsBeans.size()-1);  //改为这样，开始几次删除正常，多次之后崩溃
+                adapter.remove(0);  //改为这样，开始几次删除正常，多次之后崩溃
                 //todo java.lang.ArrayIndexOutOfBoundsException: length=22; index=-1
+                break;
+            case com.example.p_czyunchen.demo.R.id.homeAsUp:
+                finish();
                 break;
         }
 
