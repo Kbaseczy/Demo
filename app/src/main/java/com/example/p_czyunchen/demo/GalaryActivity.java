@@ -9,6 +9,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
+
+import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -142,6 +144,8 @@ public class GalaryActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.action_add:
                 adapter.add(1);
+                //上下文菜单
+                
                 break;
             case R.id.action_remove:
                 adapter.remove(resultsBeans.size()-1);  //改为这样，开始几次删除正常，多次之后崩溃
