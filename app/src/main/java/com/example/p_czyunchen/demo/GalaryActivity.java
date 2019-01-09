@@ -150,7 +150,7 @@ public class GalaryActivity extends AppCompatActivity {
                 adapter.remove(0);  //改为这样，开始几次删除正常，多次之后崩溃
                 //todo java.lang.ArrayIndexOutOfBoundsException: length=22; index=-1
                 break;
-            case com.example.p_czyunchen.demo.R.id.homeAsUp:
+            case android.R.id.home:
                 finish();
                 break;
         }
