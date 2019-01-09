@@ -143,9 +143,7 @@ public class GalaryActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_add:
-                adapter.add(1);
                 //上下文菜单
-                
                 adapter.add(0);
                 break;
             case R.id.action_remove:
