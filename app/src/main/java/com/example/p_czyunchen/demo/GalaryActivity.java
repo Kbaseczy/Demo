@@ -3,8 +3,6 @@ package com.example.p_czyunchen.demo;
 import android.annotation.TargetApi;
 import android.os.Build;
 import android.os.Bundle;
-<<<<<<< HEAD
-=======
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,8 +10,6 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
-import android.view.ContextMenu;
->>>>>>> a78d473b36823d3c74025451503c729d974a0714
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -33,12 +29,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.recyclerview.widget.DefaultItemAnimator;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import okhttp3.Call;
 import okhttp3.Request;
 
