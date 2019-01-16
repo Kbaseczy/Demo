@@ -9,3 +9,6 @@
 /build
 /captures
 .externalNativeBuild
+app/src/main/AndroidManifest.xml
+*.xml
+app/src/main/java/com/example/p_czyunchen/demo/GalaryActivity.java
