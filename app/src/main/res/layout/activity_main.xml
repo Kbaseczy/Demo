@@ -5,8 +5,7 @@
     android:layout_height="match_parent"
     android:layout_margin="10dp"
     android:layout_marginTop="20dp"
-    android:orientation="vertical"
-    tools:context=".MainActivity">
+    android:orientation="vertical">
 
     <TextView
         android:id="@+id/viewflipper"
@@ -62,5 +61,17 @@
         android:layout_gravity="center"
         android:gravity="center"
         android:text="@string/remove_add"
+        android:textSize="15sp"/>
+
+    <TextView
+        android:id="@+id/notification"
+        android:layout_marginTop="30dp"
+        android:background="@color/colorPrimary"
+        android:layout_width="200dp"
+        android:layout_height="30dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="@string/notification"
+        android:onClick="notication"
         android:textSize="15sp"/>
 </LinearLayout>

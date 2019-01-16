@@ -60,8 +60,14 @@ public class GalaryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
                     itemClick.onClick(viewHolder, i)
             );
             ((ViewHolder) viewHolder).linearLayout.setOnLongClickListener(v -> {
-                        Toast.makeText(mContext, "long click", Toast.LENGTH_SHORT).show();
-                        remove(i);
+
+                        if(resultsBeans.size()>1){
+                            remove(i);
+                            notifyDataSetChanged();//TODO 检测数组越界异常,及时更新UI刷新数据防止数组越界
+                        }else{
+                            Toast.makeText(mContext, "数据长度不足", Toast.LENGTH_SHORT).show();
+                        }
+
                         return true;
                     }
             );

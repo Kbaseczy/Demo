@@ -10,4 +10,7 @@
     <string name="add">add</string>
     <string name="remove">remove</string>
     <string name="remove_add">remove_add</string>
+    <string name="chat">chat</string>
+    <string name="subscribet">subscribet</string>
+    <string name="notification">notification</string>
 </resources>

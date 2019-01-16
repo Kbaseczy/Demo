@@ -18,18 +18,20 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity android:name=".ViewFlipperActivity" />
         <activity android:name=".GetViewTypeActivity" />
         <activity android:name=".TODOActivity" />
-        <activity android:name=".GalaryActivity"
-            android:theme="@style/AppBaseTheme"/>
+        <activity
+            android:name=".GalaryActivity"
+            android:theme="@style/AppBaseTheme" />
         <activity
             android:name=".RemoveAddActivity"
             android:theme="@style/AppBaseTheme" />
+        <activity android:name=".notification.NotificationActivity"></activity>
     </application>
 
 </manifest>

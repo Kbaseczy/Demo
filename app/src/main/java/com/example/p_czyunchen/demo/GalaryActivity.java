@@ -3,16 +3,11 @@ package com.example.p_czyunchen.demo;
 import android.annotation.TargetApi;
 import android.os.Build;
 import android.os.Bundle;
-import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.recyclerview.widget.DefaultItemAnimator;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
@@ -27,6 +22,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import okhttp3.Call;
 import okhttp3.Request;
 
@@ -53,6 +54,7 @@ public class GalaryActivity extends AppCompatActivity {
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
+
         MyRecyclerView recyclerView = findViewById(R.id.my_recycler);
         ImageView imageView = findViewById(R.id.image_galary);
         imageView.setOnClickListener(v -> fullScreen());
@@ -67,6 +69,7 @@ public class GalaryActivity extends AppCompatActivity {
                         .into(imageView));
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(manager);
+
         recyclerView.setOnItemScrollChangeListener((view, i) ->
                 Glide.with(this)
                         .load(resultsBeans.get(i).getUrl())
@@ -142,10 +145,15 @@ public class GalaryActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.action_add:
                 adapter.add(0);
+                adapter.notifyDataSetChanged();
                 break;
             case R.id.action_remove:
-                adapter.remove(0);  //改为这样，开始几次删除正常，多次之后崩溃
-                //todo java.lang.ArrayIndexOutOfBoundsException: length=22; index=-1
+                if(resultsBeans.size() > 1) {
+                    adapter.remove(0);
+                    adapter.notifyDataSetChanged();
+                }else{
+                    Toast.makeText(this, "数据长度不足", Toast.LENGTH_SHORT).show();
+                }
                 break;
             case com.example.p_czyunchen.demo.R.id.homeAsUp:
                 finish();
