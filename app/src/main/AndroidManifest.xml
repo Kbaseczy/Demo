@@ -31,7 +31,7 @@
         <activity
             android:name=".RemoveAddActivity"
             android:theme="@style/AppBaseTheme" />
-        <activity android:name=".notification.NotificationActivity"></activity>
+        <activity android:name=".notification.NotificationActivity"/>
     </application>
 
 </manifest>
