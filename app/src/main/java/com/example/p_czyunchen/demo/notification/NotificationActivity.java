@@ -12,7 +12,6 @@ import android.provider.Settings;
 import android.view.View;
 import android.widget.Toast;
 
-import com.bumptech.glide.util.CachedHashCodeArrayMap;
 import com.example.p_czyunchen.demo.R;
 
 import androidx.annotation.RequiresApi;
