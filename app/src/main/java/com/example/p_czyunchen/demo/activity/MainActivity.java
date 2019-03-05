@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.example.p_czyunchen.demo.R;
-import com.example.p_czyunchen.demo.notification.NotificationActivity;
 
 import androidx.appcompat.app.AppCompatActivity;
 

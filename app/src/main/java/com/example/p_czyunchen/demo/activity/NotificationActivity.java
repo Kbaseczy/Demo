@@ -1,4 +1,4 @@
-package com.example.p_czyunchen.demo.notification;
+package com.example.p_czyunchen.demo.activity;
 
 import android.app.Activity;
 import android.app.Notification;
