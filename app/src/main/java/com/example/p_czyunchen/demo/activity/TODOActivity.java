@@ -24,7 +24,6 @@ public class TODOActivity extends Activity {
         translucentStatusBar(this,true);
     }
 
-
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     void translucentStatusBar(Activity activity, boolean hideStatusBarBackground) {
         Window window = activity.getWindow();

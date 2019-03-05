@@ -122,6 +122,8 @@ public class WipeView extends View {
                 mPath.moveTo(move_x, move_y);
                 invalidate();//更新画面
                 return true;
+//            case MotionEvent.ACTION_UP:
+//                mPath.
         }
         return super.onTouchEvent(event);
     }
