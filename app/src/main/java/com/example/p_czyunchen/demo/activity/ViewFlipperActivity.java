@@ -1,4 +1,4 @@
-package com.example.p_czyunchen.demo;
+package com.example.p_czyunchen.demo.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -12,6 +12,7 @@ import android.widget.Toast;
 import android.widget.ViewFlipper;
 
 import com.bumptech.glide.Glide;
+import com.example.p_czyunchen.demo.R;
 import com.example.p_czyunchen.demo.bean.News;
 import com.example.p_czyunchen.demo.bean.ProjectChapter;
 import com.google.gson.Gson;

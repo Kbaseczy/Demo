@@ -1,4 +1,4 @@
-package com.example.p_czyunchen.demo;
+package com.example.p_czyunchen.demo.activity;
 
 import android.os.Build;
 import android.os.Bundle;
@@ -12,6 +12,7 @@ import androidx.appcompat.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.example.p_czyunchen.demo.R;
 import com.example.p_czyunchen.demo.adapter.AnimatorAdapter;
 
 import java.util.ArrayList;

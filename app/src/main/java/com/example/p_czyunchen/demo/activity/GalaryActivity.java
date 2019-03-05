@@ -1,4 +1,4 @@
-package com.example.p_czyunchen.demo;
+package com.example.p_czyunchen.demo.activity;
 
 import android.annotation.TargetApi;
 import android.os.Build;
@@ -18,6 +18,7 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
+import com.example.p_czyunchen.demo.R;
 import com.example.p_czyunchen.demo.adapter.GalaryAdapter;
 import com.example.p_czyunchen.demo.bean.Beauty;
 import com.example.p_czyunchen.demo.custom.MyRecyclerView;

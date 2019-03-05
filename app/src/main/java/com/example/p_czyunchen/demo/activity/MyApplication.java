@@ -1,4 +1,4 @@
-package com.example.p_czyunchen.demo;
+package com.example.p_czyunchen.demo.activity;
 
 import android.app.Application;
 
