@@ -39,4 +39,8 @@ public class MainActivity extends AppCompatActivity {
     public void notication(View view) {
         startActivity(new Intent(this,NotificationActivity.class));
     }
+
+    public void small_video(View view) {
+        startActivity(new Intent(this,RecyclerView2Activity.class));
+    }
 }

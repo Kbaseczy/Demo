@@ -11,7 +11,7 @@ android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.example.p_czyunchen.demo"
-        minSdkVersion 15
+        minSdkVersion 19
         targetSdkVersion 28
         versionCode 1
         versionName "1"
@@ -61,6 +61,12 @@ dependencies {
     implementation 'com.zhy:okhttputils:2.6.2'
     implementation 'com.google.code.gson:gson:2.8.5'
     implementation 'com.google.android.material:material:1.1.0-alpha03'
+    implementation 'cn.jzvd:jiaozivideoplayer:6.4.1'
     api 'io.reactivex:rxjava:1.0.14'
     api 'io.reactivex:rxandroid:1.0.1'
+
+    implementation 'com.shuyu:GSYVideoPlayer:7.0.0-beta1'
+    implementation 'com.shuyu:gsyVideoPlayer-java:7.0.0-beta1'
+    implementation 'com.jakewharton:butterknife:10.1.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.1.0'
 }
