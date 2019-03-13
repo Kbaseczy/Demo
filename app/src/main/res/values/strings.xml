@@ -14,4 +14,8 @@
     <string name="subscribet">subscribet</string>
     <string name="notification">notification</string>
     <string name="small_video">small_video</string>
+    <string name="http">http</string>
+    <string name="view">view擦除</string>
+    <string name="get">Get</string>
+    <string name="post">Post</string>
 </resources>

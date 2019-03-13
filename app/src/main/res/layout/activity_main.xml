@@ -37,7 +37,7 @@
         android:layout_height="30dp"
         android:layout_gravity="center"
         android:gravity="center"
-        android:text="@string/TODO"
+        android:text="@string/view"
         android:textSize="15sp"/>
 
 
@@ -85,5 +85,17 @@
         android:gravity="center"
         android:text="@string/small_video"
         android:onClick="small_video"
+        android:textSize="15sp"/>
+
+    <TextView
+        android:id="@+id/http"
+        android:layout_marginTop="30dp"
+        android:background="@color/colorPrimary"
+        android:layout_width="200dp"
+        android:layout_height="30dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="@string/http"
+        android:onClick="httpClick"
         android:textSize="15sp"/>
 </LinearLayout>
