@@ -8,6 +8,7 @@ import android.widget.Button;
 
 import com.example.p_czyunchen.demo.R;
 import com.example.p_czyunchen.demo.api.RetrofitApi;
+import com.example.p_czyunchen.demo.bean.TodoTodo;
 import com.example.p_czyunchen.demo.bean.User;
 import com.zhy.http.okhttp.cookie.CookieJarImpl;
 import com.zhy.http.okhttp.cookie.store.PersistentCookieStore;
@@ -25,8 +26,6 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-import static com.shuyu.gsyvideoplayer.GSYVideoADManager.TAG;
-
 public class HttpActivity extends Activity {
 
     @BindView(R.id.http_get)
@@ -43,7 +42,11 @@ public class HttpActivity extends Activity {
 
     @OnClick(R.id.http_get)
     public void onButterKnifeBtnClick(View view) {
-        Log.e(TAG, "onButterKnifeBtnClick");
+        todoList();
+    }
+
+    @OnClick(R.id.http_post)
+    public void getlist(View view){
         login();
     }
 
@@ -56,27 +59,45 @@ public class HttpActivity extends Activity {
                 .cookieJar(cookieJar)
                 .build();
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://www.wanandroid.com")
+                .baseUrl("https://www.wanandroid.com/")
                 .addConverterFactory(GsonConverterFactory.create())
-                .client(okHttpClient)
+                .client(new OkHttpClient())
                 .build();
         RetrofitApi api = retrofit.create(RetrofitApi.class);
         Call<User> loginCall = api.login("15541125277", "123456");
         loginCall.enqueue(new Callback<User>() {
             @Override
             public void onResponse(Call<User> call, Response<User> response) {
-                Log.v("sdfasdf",response.body()+"  yhujg");
+                Log.v("sdfasdf",response.body().getData().getUsernameX()+"\n"+response.body().getErrorCode()+"  123455");
+
             }
 
             @Override
             public void onFailure(Call<User> call, Throwable t) {
+                Log.v("sdfasdf",t.getMessage()+"  yhujg");
 
             }
         });
     }
 
     void todoList() {
-        String url = "http://www.wanandroid.com/lg/todo/v2/list/1/json";
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("https://www.wanandroid.com/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .client(new OkHttpClient())
+                .build();
+        RetrofitApi api = retrofit.create(RetrofitApi.class);
+        Call<TodoTodo> todoCall = api.getTodoList();
+        todoCall.enqueue(new Callback<TodoTodo>() {
+            @Override
+            public void onResponse(Call<TodoTodo> call, Response<TodoTodo> response) {
+                Log.v("sdfasdf", (response.body() != null ? response.body().getErrorCode() : 1) + "  response");
+            }
 
+            @Override
+            public void onFailure(Call<TodoTodo> call, Throwable t) {
+                Log.v("sdfasdf",t.getMessage()+   "is there having.");
+            }
+        });
     }
 }
