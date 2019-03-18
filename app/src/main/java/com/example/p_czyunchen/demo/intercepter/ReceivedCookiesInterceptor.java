@@ -1,8 +1,9 @@
 package com.example.p_czyunchen.demo.intercepter;
 
+import android.content.SharedPreferences;
+
 import java.io.IOException;
 import java.util.HashSet;
-import java.util.prefs.Preferences;
 
 import okhttp3.Interceptor;
 import okhttp3.Response;
@@ -19,11 +20,10 @@ public class ReceivedCookiesInterceptor implements Interceptor {
                 cookies.add(header);
             }
 
-            Preferences.getDefaultPreferences().edit()
-                    .putStringSet(Preferences.PREF_COOKIES, cookies)
+            SharedPreferences.getDefaultPreferences().edit()
+                    .putStringSet("pref_cookie", cookies)
                     .apply();
         }
-
         return originalResponse;
     }
 }
