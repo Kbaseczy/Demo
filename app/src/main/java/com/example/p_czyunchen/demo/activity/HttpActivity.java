@@ -80,7 +80,7 @@ public class HttpActivity extends Activity {
         });
     }
 
-    
+
     void todoList() {
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://www.wanandroid.com/")

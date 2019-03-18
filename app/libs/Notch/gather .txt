@@ -1,0 +1,20 @@
+坚果
+宽高：82*104  px
+
+oppo
+宽高：80*324  px
+[ro.oppo.screen.heteromorphism]: 
+notch 区域坐标-->[378,0:702,80]
+
+vivo
+宽高：100*27  dp  app内转为px
+
+华为
+app获取  宽高
+
+小米
+app获取  宽高
+
+
+android P 通配获取，
+android O 按厂商获取
