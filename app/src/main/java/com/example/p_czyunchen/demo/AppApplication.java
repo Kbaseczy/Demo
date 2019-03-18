@@ -1,10 +1,14 @@
 package com.example.p_czyunchen.demo;
 
 import android.app.Application;
+import android.content.Context;
 
-import com.zhy.http.okhttp.cookie.CookieJarImpl;
-import com.zhy.http.okhttp.cookie.store.PersistentCookieStore;
-import com.zhy.http.okhttp.log.LoggerInterceptor;
+import com.example.p_czyunchen.demo.intercepter.AddCookiesInterceptor;
+import com.example.p_czyunchen.demo.intercepter.ReceivedCookiesInterceptor;
+import com.franmontiel.persistentcookiejar.ClearableCookieJar;
+import com.franmontiel.persistentcookiejar.PersistentCookieJar;
+import com.franmontiel.persistentcookiejar.cache.SetCookieCache;
+import com.franmontiel.persistentcookiejar.persistence.SharedPrefsCookiePersistor;
 
 import java.util.concurrent.TimeUnit;
 
@@ -13,24 +17,37 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class AppApplication extends Application {
+    public static Retrofit retrofit;
+    Context mContext;
 
     @Override
     public void onCreate() {
         super.onCreate();
         initRetrofit();
     }
-    void initRetrofit(){
-        CookieJarImpl cookieJar = new CookieJarImpl(new PersistentCookieStore(getApplicationContext()));
+
+    void initRetrofit() {
+        ClearableCookieJar cookieJar =
+                new PersistentCookieJar(new SetCookieCache(), new SharedPrefsCookiePersistor(getApplicationContext()));
         OkHttpClient okHttpClient = new OkHttpClient.Builder()
                 .connectTimeout(15000L, TimeUnit.MILLISECONDS)
                 .readTimeout(15000L, TimeUnit.MILLISECONDS)
-                .addInterceptor(new LoggerInterceptor("jankin"))
+//                .addInterceptor(new ReceivedCookiesInterceptor())
+//                .addInterceptor(new AddCookiesInterceptor())
                 .cookieJar(cookieJar)
                 .build();
-        Retrofit retrofit = new Retrofit.Builder()
+        retrofit = new Retrofit.Builder()
                 .baseUrl("https://www.wanandroid.com/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(okHttpClient)
                 .build();
+    }
+
+    public static AppApplication getContext() {
+        return MyApplicationHolder.MY_APPLICATION;
+    }
+
+    private static class MyApplicationHolder {
+        private static final AppApplication MY_APPLICATION = new AppApplication();
     }
 }

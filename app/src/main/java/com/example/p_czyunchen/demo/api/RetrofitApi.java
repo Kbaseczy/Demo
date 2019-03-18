@@ -14,7 +14,7 @@ public interface RetrofitApi {
     Call<User> login(@Query("username") String username,
                      @Query("password") String password);
 
-    @GET("lg/todo/v2/list/")
+    @GET("lg/todo/v2/list/1/json")
     Call<TodoTodo> getTodoList();
 
 }
